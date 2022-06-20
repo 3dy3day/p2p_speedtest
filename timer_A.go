@@ -8,14 +8,14 @@ import (
 
 func main() {
 	now := time.Now()
-	result, err := exec.Command("bash", "-c", "./ftrans send ./test.jpg -p test1234 --sig ws://YOURIP/ws").Output()
+	result, err := exec.Command("bash", "-c", "./ftrans send ./YOURFILE -p PASSWORD --sig ws://YOURIP/ws").Output()
 	if err != nil {
 		fmt.Println(string(result))
 	} else {
 		fmt.Println(err)
 	}
 
-	result_rec, err_rec := exec.Command("bash", "-c", "./ftrans recv -p test1234 --signaling ws://YOURIP/ws").Output()
+	result_rec, err_rec := exec.Command("bash", "-c", "./ftrans recv -p PASSWORD --signaling ws://YOURIP/ws").Output()
 	if err_rec != nil {
 		fmt.Println(string(result_rec))
 	} else {
